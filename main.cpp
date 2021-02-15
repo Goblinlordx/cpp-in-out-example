@@ -13,15 +13,17 @@ int main()
     std::string input;
     std::getline(std::cin >> std::ws, input);
     std::string output;
+    char c;
     for (std::string::size_type i = 0; i < input.size(); ++i)
     {
-        if (mapping.count(input[i]) == 0)
+        c = tolower(input[i]);
+        if (mapping.count(c) == 0)
         {
             output += input[i];
         }
         else
         {
-            output += std::string(mapping[input[i]], input[i]);
+            output += std::string(mapping[c], input[i]);
         }
     }
     std::cout << output << std::endl;
